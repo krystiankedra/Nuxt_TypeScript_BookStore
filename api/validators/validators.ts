@@ -1,0 +1,1 @@
+export const numberValidator = (value: string) => new RegExp('^[0-9]').test(value);
