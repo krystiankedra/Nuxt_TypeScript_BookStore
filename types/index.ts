@@ -29,6 +29,7 @@ export interface RegistrationInterface {
   age: number
   firstname: string
   lastname: string
+  role: string
 };
 
 export interface RegistrationStateInterface {

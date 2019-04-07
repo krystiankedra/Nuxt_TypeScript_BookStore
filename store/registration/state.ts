@@ -8,7 +8,8 @@ export default<RegistrationStateInterface> {
             email: 'admin@admin.com',
             age: 25,
             firstname: 'Admin',
-            lastname: 'Admin'
+            lastname: 'Admin',
+            role: 'admin'
         },
         {
             login: 'krystian',
@@ -16,7 +17,8 @@ export default<RegistrationStateInterface> {
             email: 'krystianVuejs@test.com',
             age: 25,
             firstname: 'Krystian',
-            lastname: 'Kędra'
+            lastname: 'Kędra',
+            role: 'user'
         }
     ]
 }

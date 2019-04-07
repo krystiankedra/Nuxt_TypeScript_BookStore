@@ -64,6 +64,7 @@ export default class Registration extends Vue {
     age: number = null;
     firstname: string = '';
     lastname: string = '';
+    role: string = 'user';
     isCorrectValidate: boolean = true;
     validationText: string = `Please fill in all fields in the form! Remember that age must be a number!`;
     isExistAccountValidate: boolean = false;
@@ -101,7 +102,8 @@ export default class Registration extends Vue {
             email: this.email,
             age: this.age,
             firstname: this.firstname,
-            lastname: this.lastname
+            lastname: this.lastname,
+            role: this.role
         };
         return newAcccountValues;
     };

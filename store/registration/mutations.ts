@@ -17,5 +17,8 @@ export default<MutationTree<RegistrationStateInterface>> {
             }
             return acc;
         }, []);
+    },
+    deleteAccount(state: RegistrationStateInterface, payload: RegistrationInterface['login']) {
+        state.registraitedUsers = state.registraitedUsers.filter((user: RegistrationInterface) => user.login !== payload);
     }
 };
