@@ -10,7 +10,7 @@
         <td>{{ user.role }}</td>
         <td>
             <button
-                v-if="chckIfCanDeleteAccounts"
+                v-if="checkIfCanDeleteAccounts"
                 @click="deleteAccount(user.login)"
                 class="btn btn-outline-danger">
                     Delete
@@ -34,7 +34,7 @@ export default class User extends Vue {
         return userLogin;
     };
 
-    get chckIfCanDeleteAccounts(): boolean {
+    get checkIfCanDeleteAccounts(): boolean {
         return this.user.role === 'user' && this.getLoggedUser.login !== this.user.login;
     };
 

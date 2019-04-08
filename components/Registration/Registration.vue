@@ -101,7 +101,7 @@ export default class Registration extends Vue {
         return check;
     };
 
-    accountRole(key): RegisterUserInterface['role'] {
+    accountRole(key: string): RegisterUserInterface['role'] {
         return key === 'Give Me Admin' ? 'admin' : 'user;'
     };
 
