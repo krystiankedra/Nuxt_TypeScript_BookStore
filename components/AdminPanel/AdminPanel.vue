@@ -15,19 +15,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(user, index) in getRegistraitedUsers" :key="index">
-                    <th>{{ index + 1 }}</th>
-                    <td>{{ user.login }}</td>
-                    <td>{{ user.password }}</td>
-                    <td>{{ user.email }}</td>
-                    <td>{{ user.age }}</td>
-                    <td>{{ user.firstname }}</td>
-                    <td>{{ user.lastname }}</td>
-                    <td>{{ user.role }}</td>
-                    <td>
-                        <button class="btn btn-outline-danger" @click="deleteAccount(user.login)">Delete</button>
-                    </td>
-                </tr>
+                <user
+                    v-for="(user, index) in getRegistraitedUsers"
+                    :key="index"
+                    :index="index"
+                    :user="user"
+                    @deleteAccount="deleteAccount"
+                    :get-logged-user="getLoggedUser" />
             </tbody>
         </table>
     </div>
@@ -35,12 +29,19 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator';
-import { RegisterUserInterface } from '~/types';
-import { Mutation } from 'vuex-class';
+import { RegisterUserInterface, LoginInterface } from '~/types';
+import { Mutation, Getter } from 'vuex-class';
 import * as MUTATIONS from '~/store/mutationTypes';
+import User from '~/components/User/User.vue';
 
-@Component
+@Component({
+    components: {
+        User
+    }
+})
 export default class AdminPanel extends Vue {
+
+    @Getter getLoggedUser: LoginInterface;
 
     @Prop() getRegistraitedUsers: RegisterUserInterface[];
 
