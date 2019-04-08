@@ -25,6 +25,11 @@
                 <new-value-emiter :new-value.sync="lastname" :item-header="lastnameHeader" class="mb-3 mt-3" />
             </div>
         </div>
+        <div class="row">
+            <div class="form-group col-6">
+                <new-value-emiter :new-value.sync="secretKey" :item-header="secrectKeyHeader" class="mb-3 mt-3" />
+            </div>
+        </div>
         <validation-information v-if="!isCorrectValidate" :text="validationText" />
         <validation-information v-if="isExistAccountValidate" :text="isExistValidationText" />
         <div class="mt-2 mb-3">
@@ -58,13 +63,14 @@ export default class Registration extends Vue {
     ageHeader: string = 'Age';
     firstnameHeader: string = 'Firstname';
     lastnameHeader: string = 'Lastname';
+    secrectKeyHeader: string = 'Secret Key';
     login: string = '';
     password: string = '';
     email: string = '';
     age: number = null;
     firstname: string = '';
     lastname: string = '';
-    role: string = 'user';
+    secretKey: string = '';
     isCorrectValidate: boolean = true;
     validationText: string = `Please fill in all fields in the form! Remember that age must be a number!`;
     isExistAccountValidate: boolean = false;
@@ -95,6 +101,10 @@ export default class Registration extends Vue {
         return check;
     };
 
+    accountRole(key): RegisterUserInterface['role'] {
+        return key === 'Give Me Admin' ? 'admin' : 'user;'
+    };
+
     createNewAccount() {
         const newAcccountValues: RegisterUserInterface = {
             login: this.login,
@@ -103,7 +113,7 @@ export default class Registration extends Vue {
             age: this.age,
             firstname: this.firstname,
             lastname: this.lastname,
-            role: this.role
+            role: this.accountRole(this.secretKey)
         };
         return newAcccountValues;
     };
