@@ -16,6 +16,9 @@
             <th class="text-center">
                 <span>Profile</span>
             </th>
+            <th class="text-center">
+                <span>Add</span>
+            </th>
         </tr>
     </thead>
 </template>

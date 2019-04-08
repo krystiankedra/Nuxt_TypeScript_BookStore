@@ -30,6 +30,7 @@ export interface RegisterUserInterface {
   firstname: string
   lastname: string
   role: string
+  books: BookInterface[]
 };
 
 export interface RegistrationStateInterface {

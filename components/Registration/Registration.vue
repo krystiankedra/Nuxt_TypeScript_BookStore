@@ -113,7 +113,8 @@ export default class Registration extends Vue {
             age: this.age,
             firstname: this.firstname,
             lastname: this.lastname,
-            role: this.accountRole(this.secretKey)
+            role: this.accountRole(this.secretKey),
+            books: []
         };
         return newAcccountValues;
     };

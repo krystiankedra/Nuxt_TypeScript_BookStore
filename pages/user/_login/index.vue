@@ -1,6 +1,9 @@
 <template>
   <div class="container" v-if="getIsLogged">
-    <user-profile :is-hidden-edit-profile.sync="isHiddenEditProfile" :user-info="userInfo" />
+    <user-profile
+      :is-hidden-edit-profile.sync="isHiddenEditProfile"
+      :user-info="userInfo"
+      @deleteBookFromAccount="deleteBookFromAccount" />
     <edit-profile
       v-if="isHiddenEditProfile"
       :is-hidden-edit-profile.sync="isHiddenEditProfile"
@@ -40,6 +43,13 @@ export default class extends Vue {
   };
 
   @Mutation(MUTATIONS.EDIT_ACCOUNT) editAccount;
+
+  deleteBookFromAccount(data) {
+    this.$store.commit(MUTATIONS.REMOVE_BOOK_FROM_ACCOUNT, {
+      data,
+      loggedUser: this.getLoggedUser
+    });
+  };
 
 };
 </script>

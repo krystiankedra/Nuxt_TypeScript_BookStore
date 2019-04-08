@@ -20,5 +20,21 @@ export default<MutationTree<RegistrationStateInterface>> {
     },
     deleteAccount(state: RegistrationStateInterface, payload: RegisterUserInterface['login']) {
         state.registraitedUsers = state.registraitedUsers.filter((user: RegisterUserInterface) => user.login !== payload);
+    },
+    addBookToAccount(state: RegistrationStateInterface, payload) {
+        state.registraitedUsers.reduce((users: RegisterUserInterface[], user: RegisterUserInterface) => {
+            if (user.login === payload.loggedUser.login) {
+                user.books.push(payload.book);
+            }
+            return users;
+        }, []);
+    },
+    removeBookFromAccount(state: RegistrationStateInterface, payload) {
+        state.registraitedUsers.reduce((users: RegisterUserInterface[], user: RegisterUserInterface) => {
+            if (user.login === payload.loggedUser.login) {
+                user.books.splice(payload.data.index, 1);
+            }
+            return users;
+        }, []);
     }
 };

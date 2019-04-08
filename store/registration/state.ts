@@ -27,7 +27,8 @@ export default<RegistrationStateInterface> {
             age: 28,
             firstname: "Paweł",
             lastname: "Kowalski",
-            role: "user"
+            role: "user",
+            books: []
         },
         {
             login: "jnowak",
@@ -36,7 +37,8 @@ export default<RegistrationStateInterface> {
             age: 23,
             firstname: "Jan",
             lastname: "Nowak",
-            role: "user"
+            role: "user",
+            books: []
         }
     ]
 }

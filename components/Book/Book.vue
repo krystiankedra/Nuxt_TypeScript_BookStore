@@ -15,6 +15,9 @@
         <td>
             <button @click="viewBookProfile(book.id)" class="btn btn-outline-primary">View</button>
         </td>
+        <td>
+            <button @click="addBookToAccount(book)" class="btn btn-outline-primary">Add</button>
+        </td>
         <Modal
             v-if="isOpenModal"
             :is-open-modal.sync="isOpenModal"
@@ -68,6 +71,10 @@ export default class Book extends Vue {
         return this.book.description.length > 120
             ? this.sliceDescription(this.book.description)
             : this.book.description;
+    };
+
+    @Emit('addBookToAccount') addBookToAccount(book: BookInterface) {
+        return book;
     };
 
 };

@@ -13,6 +13,8 @@ export const SET_RANDOM_BOOK: string = "setRandomBook";
 export const CREATE_NEW_ACCOUNT: string = "createNewAccount";
 export const EDIT_ACCOUNT: string = "editAccount";
 export const DELETE_ACCOUNT: string = "deleteAccount";
+export const ADD_BOOK_TO_ACCOUNT: string = "addBookToAccount";
+export const REMOVE_BOOK_FROM_ACCOUNT: string = "removeBookFromAccount";
 
 //login
 export const SET_LOGGED_USER: string = "setLoggedUser";
