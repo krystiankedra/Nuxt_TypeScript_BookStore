@@ -22,7 +22,7 @@
 <script lang="ts">
 import { Component, Vue, Prop, Emit } from "vue-property-decorator";
 import { BookInterface } from "types";
-import NewValueEmiter from '~/components/NewValueEmiter/NewValueEmiter.vue'
+import NewValueEmiter from '~/components/NewValueEmiter/NewValueEmiter.vue';
 
 @Component({
   components: {

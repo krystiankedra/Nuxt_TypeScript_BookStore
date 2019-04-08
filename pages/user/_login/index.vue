@@ -37,7 +37,7 @@ export default class extends Vue {
 
   get UserInfoWithoutReference(): RegisterUserInterface {
     return Object.assign({}, this.userInfo);
-  }
+  };
 
   @Mutation(MUTATIONS.EDIT_ACCOUNT) editAccount;
 

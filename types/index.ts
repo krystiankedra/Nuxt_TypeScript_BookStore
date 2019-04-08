@@ -42,6 +42,6 @@ export interface LoginInterface {
 };
 
 export interface LoginStateInterface {
-  isLogged: boolean,
+  isLogged: boolean
   loggedUser: RegisterUserInterface
 };

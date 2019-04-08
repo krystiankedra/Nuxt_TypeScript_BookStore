@@ -74,5 +74,6 @@ export default class Login extends Vue {
             this.$router.push(`/`);
         }
     };
+
 };
 </script>

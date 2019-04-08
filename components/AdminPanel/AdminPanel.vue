@@ -3,15 +3,7 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">Index</th>
-                    <th scope="col">Login</th>
-                    <th scope="col">Password</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Age</th>
-                    <th scope="col">Firstname</th>
-                    <th scope="col">Lastname</th>
-                    <th scope="col">Role</th>
-                    <th scope="col">Delete</th>
+                    <th v-for="(header, index) in tableHeaders" :key="index" scope="col">{{ header }}</th>
                 </tr>
             </thead>
             <tbody>
@@ -40,6 +32,8 @@ import User from '~/components/User/User.vue';
     }
 })
 export default class AdminPanel extends Vue {
+
+    protected tableHeaders: string[] = ['Index', 'Login', 'Password', 'Email', 'Age', 'Firstname', 'Lastname', 'Role', 'Delete'];
 
     @Getter getLoggedUser: LoginInterface;
 
