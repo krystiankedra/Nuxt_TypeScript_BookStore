@@ -12,7 +12,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { Getter, Mutation } from 'vuex-class';
-import { LoginInterface, RegistrationInterface } from '~/types';
+import { LoginInterface, RegisterUserInterface } from '~/types';
 import UserProfile from '~/components/UserProfile/UserProfile.vue';
 import EditProfile from '~/components/EditProfile/EditProfile.vue';
 import * as MUTATIONS from '~/store/mutationTypes';
@@ -29,13 +29,13 @@ export default class extends Vue {
 
   @Getter getIsLogged: boolean;
   @Getter getLoggedUser: LoginInterface;
-  @Getter getRegistraitedUsers: RegistrationInterface[];
+  @Getter getRegistraitedUsers: RegisterUserInterface[];
 
-  get userInfo(): RegistrationInterface {
+  get userInfo(): RegisterUserInterface {
     return this.getRegistraitedUsers.find(user => user.login === this.getLoggedUser.login);
   };
 
-  get UserInfoWithoutReference(): RegistrationInterface {
+  get UserInfoWithoutReference(): RegisterUserInterface {
     return Object.assign({}, this.userInfo);
   }
 

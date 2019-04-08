@@ -5,7 +5,7 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
 import { Getter } from 'vuex-class';
-import { RegistrationInterface } from '~/types';
+import { RegisterUserInterface } from '~/types';
 import AdminPanel from '~/components/AdminPanel/AdminPanel.vue';
 
 @Component({
@@ -15,11 +15,12 @@ import AdminPanel from '~/components/AdminPanel/AdminPanel.vue';
 })
 export default class extends Vue {
 
-    @Getter getRegistraitedUsers: RegistrationInterface[];
-    @Getter getLoggedUser: RegistrationInterface;
+    @Getter getRegistraitedUsers: RegisterUserInterface[];
+    @Getter getLoggedUser: RegisterUserInterface;
+    @Getter getIsLogged: boolean;
 
     get isAdmin(): boolean {
-        return this.getRegistraitedUsers.find(user => user.login === this.getLoggedUser.login).role === 'admin';
+        if (this.getIsLogged) return this.getRegistraitedUsers.find(user => user.login === this.getLoggedUser.login).role === 'admin';
     };
 
 };

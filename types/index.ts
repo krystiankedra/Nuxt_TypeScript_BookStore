@@ -22,7 +22,7 @@ export interface SharedStateInterface {
   selectedBook: BookInterface
 };
 
-export interface RegistrationInterface {
+export interface RegisterUserInterface {
   login: string
   password: string
   email: string
@@ -33,7 +33,7 @@ export interface RegistrationInterface {
 };
 
 export interface RegistrationStateInterface {
-  registraitedUsers: RegistrationInterface[]
+  registraitedUsers: RegisterUserInterface[]
 };
 
 export interface LoginInterface {
@@ -43,5 +43,5 @@ export interface LoginInterface {
 
 export interface LoginStateInterface {
   isLogged: boolean,
-  loggedUser: RegistrationInterface
+  loggedUser: RegisterUserInterface
 };

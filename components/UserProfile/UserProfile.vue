@@ -20,12 +20,12 @@
 
 <script lang="ts">
 import { Component, Vue, Prop, Emit } from "vue-property-decorator";
-import { RegistrationInterface } from "~/types";
+import { RegisterUserInterface } from "~/types";
 
 @Component
 export default class UserProfile extends Vue {
 
-  @Prop() userInfo: RegistrationInterface;
+  @Prop() userInfo: RegisterUserInterface;
   @Prop() isHiddenEditProfile: boolean;
 
   @Emit('update:isHiddenEditProfile') changeHiddenEditMode(): boolean {

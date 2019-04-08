@@ -24,7 +24,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { Getter } from 'vuex-class';
-import { RegistrationInterface } from '~/types';
+import { RegisterUserInterface } from '~/types';
 import NewValueEmiter from '~/components/NewValueEmiter/NewValueEmiter.vue';
 import ValidationInformation from '~/components/ValidationInformation/ValidationInformation.vue';
 
@@ -45,10 +45,10 @@ export default class Login extends Vue {
     isExistAccountValidate: boolean = true;
     isExistValidationText: string = `Login or Password are wrong!`;
 
-    @Getter getRegistraitedUsers: RegistrationInterface[];
+    @Getter getRegistraitedUsers: RegisterUserInterface[];
 
     checkIfAccountExist(newAcccountValues): boolean {
-        const check: boolean = this.getRegistraitedUsers.some((user: RegistrationInterface) =>
+        const check: boolean = this.getRegistraitedUsers.some((user: RegisterUserInterface) =>
             user.login === newAcccountValues.login
             && user.password === newAcccountValues.password
         );

@@ -35,14 +35,14 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator';
-import { RegistrationInterface } from '~/types';
+import { RegisterUserInterface } from '~/types';
 import { Mutation } from 'vuex-class';
 import * as MUTATIONS from '~/store/mutationTypes';
 
 @Component
 export default class AdminPanel extends Vue {
 
-    @Prop() getRegistraitedUsers: RegistrationInterface[];
+    @Prop() getRegistraitedUsers: RegisterUserInterface[];
 
     @Mutation(MUTATIONS.DELETE_ACCOUNT) deleteAccount;
 

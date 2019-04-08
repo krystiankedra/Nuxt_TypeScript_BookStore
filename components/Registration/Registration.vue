@@ -39,7 +39,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
-import { RegistrationInterface } from '~/types';
+import { RegisterUserInterface } from '~/types';
 import { numberValidator } from '~/api/validators/validators';
 import NewValueEmiter from '~/components/NewValueEmiter/NewValueEmiter.vue';
 import ValidationInformation from '~/components/ValidationInformation/ValidationInformation.vue';
@@ -70,7 +70,7 @@ export default class Registration extends Vue {
     isExistAccountValidate: boolean = false;
     isExistValidationText: string = `Login or Email are exist!`;
 
-    @Prop() getRegistraitedUsers: RegistrationInterface[];
+    @Prop() getRegistraitedUsers: RegisterUserInterface[];
 
     validateNewAccount(newAcccountValues): boolean {
         if (newAcccountValues.login.length > 0
@@ -87,7 +87,7 @@ export default class Registration extends Vue {
     };
 
     checkIfAccountExist(newAcccountValues): boolean {
-        const check: boolean = this.getRegistraitedUsers.some((user: RegistrationInterface) =>
+        const check: boolean = this.getRegistraitedUsers.some((user: RegisterUserInterface) =>
             user.login === newAcccountValues.login
             || user.email === newAcccountValues.email
         );
@@ -96,7 +96,7 @@ export default class Registration extends Vue {
     };
 
     createNewAccount() {
-        const newAcccountValues: RegistrationInterface = {
+        const newAcccountValues: RegisterUserInterface = {
             login: this.login,
             password: this.password,
             email: this.email,

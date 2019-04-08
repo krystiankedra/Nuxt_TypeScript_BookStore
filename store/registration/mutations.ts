@@ -1,13 +1,13 @@
 import { MutationTree } from "vuex";
-import { RegistrationStateInterface, RegistrationInterface } from "~/types";
+import { RegistrationStateInterface, RegisterUserInterface } from "~/types";
 
 export default<MutationTree<RegistrationStateInterface>> {
-    createNewAccount(state: RegistrationStateInterface, payload: RegistrationInterface) {
+    createNewAccount(state: RegistrationStateInterface, payload: RegisterUserInterface) {
         state.registraitedUsers.push(Object.assign({}, payload));
     },
-    editAccount(state: RegistrationStateInterface, payload: RegistrationInterface) {
+    editAccount(state: RegistrationStateInterface, payload: RegisterUserInterface) {
         payload = Object.assign({}, payload);
-        state.registraitedUsers.reduce((acc: RegistrationInterface[], val: RegistrationInterface) => {
+        state.registraitedUsers.reduce((acc: RegisterUserInterface[], val: RegisterUserInterface) => {
             if (val.login === payload.login) {
                 val.password = payload.password;
                 val.email = payload.email;
@@ -18,7 +18,7 @@ export default<MutationTree<RegistrationStateInterface>> {
             return acc;
         }, []);
     },
-    deleteAccount(state: RegistrationStateInterface, payload: RegistrationInterface['login']) {
-        state.registraitedUsers = state.registraitedUsers.filter((user: RegistrationInterface) => user.login !== payload);
+    deleteAccount(state: RegistrationStateInterface, payload: RegisterUserInterface['login']) {
+        state.registraitedUsers = state.registraitedUsers.filter((user: RegisterUserInterface) => user.login !== payload);
     }
 };

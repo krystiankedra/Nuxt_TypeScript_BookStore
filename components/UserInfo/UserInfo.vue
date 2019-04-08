@@ -14,15 +14,15 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { Getter } from 'vuex-class';
-import { RegistrationInterface } from '~/types';
+import { RegisterUserInterface } from '~/types';
 
 @Component
 export default class UserInfo extends Vue {
 
-    @Getter getLoggedUser: RegistrationInterface;
-    @Getter getRegistraitedUsers: RegistrationInterface[];
+    @Getter getLoggedUser: RegisterUserInterface;
+    @Getter getRegistraitedUsers: RegisterUserInterface[];
 
-    get userInfo(): RegistrationInterface {
+    get userInfo(): RegisterUserInterface {
         return this.getRegistraitedUsers.find(user => user.login === this.getLoggedUser.login);
     };
 

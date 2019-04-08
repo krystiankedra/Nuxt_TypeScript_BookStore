@@ -23,7 +23,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { Getter } from "vuex-class";
-import { BookInterface, RegistrationInterface } from "types";
+import { BookInterface, RegisterUserInterface } from "types";
 import * as MUTATIONS from '~/store/mutationTypes';
 
 @Component
@@ -31,8 +31,8 @@ export default class Navigation extends Vue {
 
     @Getter getSelectedBook: BookInterface;
     @Getter getIsLogged: boolean;
-    @Getter getRegistraitedUsers: RegistrationInterface[];
-    @Getter getLoggedUser: RegistrationInterface;
+    @Getter getRegistraitedUsers: RegisterUserInterface[];
+    @Getter getLoggedUser: RegisterUserInterface;
 
     get isAdmin(): boolean {
         return this.getRegistraitedUsers.find(user => user.login === this.getLoggedUser.login).role === 'admin';

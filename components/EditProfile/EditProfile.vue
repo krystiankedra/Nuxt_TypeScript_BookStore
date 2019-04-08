@@ -30,7 +30,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop, Emit } from "vue-property-decorator";
-import { RegistrationInterface } from "types";
+import { RegisterUserInterface } from "types";
 import NewValueEmiter from '~/components/NewValueEmiter/NewValueEmiter.vue';
 
 @Component({
@@ -40,7 +40,7 @@ import NewValueEmiter from '~/components/NewValueEmiter/NewValueEmiter.vue';
 })
 export default class extends Vue {
 
-    @Prop() userData: RegistrationInterface;
+    @Prop() userData: RegisterUserInterface;
     @Prop() isHiddenEditProfile: boolean;
 
     passwordHeader: string = 'Password';
@@ -49,7 +49,7 @@ export default class extends Vue {
     firstnameHeader: string = 'Firstname';
     lastnameHeader: string = 'Lastname';
 
-    @Emit('editAccount') editAccount(userData): RegistrationInterface {
+    @Emit('editAccount') editAccount(userData): RegisterUserInterface {
         this.$emit('update:isHiddenEditProfile', !this.isHiddenEditProfile);
         return userData;
     };
