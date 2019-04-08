@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-        <div class="alert alert-warning col-6 offset-3" role="alert">
+        <div class="alert alert-warning col-6 offset-3 card-shadow" role="alert">
             {{ text }}
         </div>
     </div>

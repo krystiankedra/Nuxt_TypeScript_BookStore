@@ -1,5 +1,5 @@
 <template>
-    <div class="container mt-5 mb-5 card">
+    <div class="container mt-5 mb-5 card card-shadow">
         <h2 class="mt-2">Log to Your account</h2>
         <div class="row">
             <div class="form-group col-6">

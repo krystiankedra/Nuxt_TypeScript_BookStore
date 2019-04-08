@@ -1,6 +1,10 @@
 <template>
     <div>
-        New {{ itemHeader }}: <input v-model="updatedValue" type="text" class="form-control" :placeholder="`Type ${itemHeader}`">
+        New {{ itemHeader }}:
+        <input v-model="updatedValue"
+            type="text"
+            class="form-control card-shadow"
+            :placeholder="`Type ${itemHeader}`">
     </div>
 </template>
 

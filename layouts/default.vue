@@ -29,3 +29,9 @@ export default class extends Vue {
 
 };
 </script>
+
+<style>
+.card-shadow {
+    box-shadow: 0 1px 15px 1px rgba(39, 39, 39, 0.1);
+}
+</style>

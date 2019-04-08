@@ -1,6 +1,6 @@
 <template>
     <thead>
-        <tr>
+        <tr class="card-shadow">
             <th class="text-center">
                 <span>Index</span>
             </th>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <input v-model="searchedValue" @input="setSearchedValue(searchedValue)" class="form-control" placeholder="Type...">
+        <input v-model="searchedValue" @input="setSearchedValue(searchedValue)" class="form-control card-shadow" placeholder="Type...">
     </div>
 </template>
 

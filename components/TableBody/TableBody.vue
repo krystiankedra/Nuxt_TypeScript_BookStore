@@ -4,7 +4,8 @@
             :key="book.id"
             :book="book"
             :index="index"
-            @deleteBook="deleteBook" />
+            @deleteBook="deleteBook"
+            class="card-shadow" />
     </tbody>
 </template>
 

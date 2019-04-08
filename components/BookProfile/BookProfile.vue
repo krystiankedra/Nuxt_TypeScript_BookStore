@@ -1,11 +1,11 @@
 <template>
-    <div class="container card mt-5 mb-5">
+    <div class="container card mt-5 mb-5 card-shadow">
         <div class="mt-2">
             <h2 class="float-left">Book Profile</h2>
             <button @click="goBack" class="btn btn-outline-danger float-right mt-2">Go Back</button>
         </div>
         <p class="font-weight-bold">All information about selected book with {{ book.id }} ID</p>
-        <div class="card mb-4">
+        <div class="card mb-4 card-shadow">
             <div class="card-body">
                 <h4 class="card-title"><span class="font-weight-bold">Book title: </span>{{ book.title }}</h4>
                 <p class="card-text"><span class="font-weight-bold">Book created by user with ID: </span>{{ book.user }}</p>

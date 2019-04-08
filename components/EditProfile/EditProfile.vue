@@ -1,5 +1,5 @@
 <template>
-    <div class="container card mt-5 mb-5">
+    <div class="container card mt-5 mb-5 card-shadow">
         <h2 class="mt-3">Edit Your Profile</h2>
         <div class="row">
             <div class="form-group col-6">

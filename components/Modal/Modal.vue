@@ -1,6 +1,6 @@
 <template>
   <div :style="isOpenModal ? 'display: block;' : 'display:none'" class="modal" id="myModal">
-    <div class="modal-dialog">
+    <div class="modal-dialog card-shadow">
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">Update Your Book</h4>

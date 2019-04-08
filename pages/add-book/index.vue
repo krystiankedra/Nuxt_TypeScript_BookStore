@@ -1,5 +1,5 @@
 <template>
-    <div class="container card mt-5">
+    <div class="container card mt-5 card-shadow">
         <h2 class="mt-2">Add new book</h2>
         <div class="row">
             <div class="form-group col-6">

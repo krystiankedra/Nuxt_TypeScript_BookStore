@@ -1,6 +1,6 @@
 <template>
     <div class="container mt-4">
-        <div class="card">
+        <div class="card card-shadow">
             <div class="card-body">
                 Welcome {{ fullname }} !
                 <div class="float-right">

@@ -1,6 +1,6 @@
 <template>
   <div class="container mt-5">
-    <div class="card">
+    <div class="card card-shadow">
       <div class="card-body">
         <p><span class="font-weight-bold">Login: </span>{{ userInfo.login }}</p>
         <p><span class="font-weight-bold">Password: </span>{{ userInfo.password }}</p>

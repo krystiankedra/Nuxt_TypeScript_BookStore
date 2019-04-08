@@ -1,8 +1,8 @@
 <template>
 <div class="container" v-if="getIsLogged">
   <h2 class="mt-5 mb-5">Books: {{ countOfBookList }}</h2>
-  <serach-item @setSearchedValue="setSearchedValue" />
-  <table class="table table-bordered">
+  <serach-item @setSearchedValue="setSearchedValue" class="card-shadow" />
+  <table class="table table-bordered card-shadow">
     <table-headers :get-table-headers="getTableHeaders" @setPropertyToSort="setPropertyToSort" />
     <table-body :get-books="getBooks" />
   </table>

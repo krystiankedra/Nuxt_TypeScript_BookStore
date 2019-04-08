@@ -1,5 +1,5 @@
 <template>
-    <div class="container card mt-5">
+    <div class="container card mt-5 card-shadow">
         <table class="table table-striped">
             <thead>
                 <tr>

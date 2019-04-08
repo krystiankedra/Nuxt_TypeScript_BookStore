@@ -1,5 +1,5 @@
 <template>
-    <tr>
+    <tr class="card-shadow">
         <th>{{ index + 1 }}</th>
         <td>{{ user.login }}</td>
         <td>{{ user.password }}</td>
