@@ -7,7 +7,7 @@ describe('ValidationInformation', () => {
         propsData: {
           text: 'ValidationText'
         }
-      })
+      });
       expect(wrapper.isVueInstance()).toBeTruthy();
       expect(typeof wrapper.props().text === 'string').toBeTruthy();
       expect(wrapper.props().text).toBe('ValidationText');
