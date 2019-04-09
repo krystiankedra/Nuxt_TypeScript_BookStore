@@ -2,7 +2,8 @@ import { mount } from '@vue/test-utils';
 import NewValueEmiter from '~/components/NewValueEmiter/NewValueEmiter.vue';
 
 describe('NewValueEmiter', () => {
-    it('NewValueEmiter', () => {
+
+    test('Check props from parent', () => {
         const wrapper = mount(NewValueEmiter, {
             propsData: {
                 newValue: 'loginValue',
@@ -22,9 +23,11 @@ describe('NewValueEmiter', () => {
         expect(wrapper.props().newValue).toBe('loginValue');
         expect(wrapper.props().itemHeader).toBe('Login');
     });
-    it('NewValueEmiterShallowMount', () => {
+
+    test('Find and Set Value', () => {
         const wrapper = mount(NewValueEmiter);
         const input = wrapper.find('.form-control');
         input.setValue('KrystianTesting');
     });
+
 });

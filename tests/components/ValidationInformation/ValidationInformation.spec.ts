@@ -7,12 +7,15 @@ describe('ValidationInformation', () => {
       text: 'ValidationText'
     }
   });
-  test('ValidationInformation is a Vue component', () => {
+
+  test('ValidationInformation is a Vue component and check props', () => {
     expect(wrapper.isVueInstance()).toBeTruthy();
     expect(typeof wrapper.props().text === 'string').toBeTruthy();
     expect(wrapper.props().text).toBe('ValidationText');
   });
-  test('renders the correct markup', () => {
+
+  test('Renders the correct markup', () => {
     expect(wrapper.contains('div')).toBe(true);
   });
+
 });
