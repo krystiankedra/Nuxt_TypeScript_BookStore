@@ -10,10 +10,13 @@
     "types": [
       "@nuxt/vue-app",
       "@types/node",
-      "@types/webpack-env"
+      "@types/webpack-env",
+      "@types/jest"
     ],
     "paths": {
       "~/*": ["./*"]
     }
-  }
+  },
+  "include": ["**/*.ts", "**/*.vue"],
+  "exclude": ["node_modules"]
 }
