@@ -43,5 +43,9 @@ export default class extends Vue {
     await this.$store.dispatch(ACTIONS.SET_BOOKS);
   };
 
+  beforeDestroy() {
+    this.$store.commit(MUTATIONS.SET_SEARCHED_VALUE, '');
+  }
+
 };
 </script>

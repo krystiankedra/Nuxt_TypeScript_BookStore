@@ -9,7 +9,8 @@ export default<RegistrationStateInterface> {
             age: 35,
             firstname: "Admin",
             lastname: "Admin",
-            role: "admin"
+            role: "admin",
+            books: []
         },
         {
             login: "krystian",
@@ -18,7 +19,8 @@ export default<RegistrationStateInterface> {
             age: 25,
             firstname: "Krystian",
             lastname: "Kędra",
-            role: "admin"
+            role: "admin",
+            books: []
         },
         {
             login: "pkowalski",
