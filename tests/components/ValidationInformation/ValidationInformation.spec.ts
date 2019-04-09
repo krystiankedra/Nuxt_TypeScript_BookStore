@@ -2,14 +2,17 @@ import ValidationInformation from '~/components/ValidationInformation/Validation
 import { mount } from '@vue/test-utils';
 
 describe('ValidationInformation', () => {
-    it('ValidationInformation is a Vue component', () => {
-      const wrapper = mount(ValidationInformation, {
-        propsData: {
-          text: 'ValidationText'
-        }
-      });
-      expect(wrapper.isVueInstance()).toBeTruthy();
-      expect(typeof wrapper.props().text === 'string').toBeTruthy();
-      expect(wrapper.props().text).toBe('ValidationText');
-    });
+  const wrapper = mount(ValidationInformation, {
+    propsData: {
+      text: 'ValidationText'
+    }
+  });
+  test('ValidationInformation is a Vue component', () => {
+    expect(wrapper.isVueInstance()).toBeTruthy();
+    expect(typeof wrapper.props().text === 'string').toBeTruthy();
+    expect(wrapper.props().text).toBe('ValidationText');
+  });
+  test('renders the correct markup', () => {
+    expect(wrapper.contains('div')).toBe(true);
+  });
 });

@@ -22,4 +22,9 @@ describe('NewValueEmiter', () => {
         expect(wrapper.props().newValue).toBe('loginValue');
         expect(wrapper.props().itemHeader).toBe('Login');
     });
+    it('NewValueEmiterShallowMount', () => {
+        const wrapper = mount(NewValueEmiter);
+        const input = wrapper.find('.form-control');
+        input.setValue('KrystianTesting');
+    });
 });
