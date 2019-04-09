@@ -45,7 +45,7 @@ export default class extends Vue {
 
   beforeDestroy() {
     this.$store.commit(MUTATIONS.SET_SEARCHED_VALUE, '');
-  }
+  };
 
 };
 </script>

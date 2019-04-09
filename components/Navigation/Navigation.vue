@@ -1,22 +1,22 @@
 <template>
     <div class="container mt-5">
-        <div class="d-flex justify-content-center">
-            <div class="mr-1 ml-1">
-                <nuxt-link to="/" tag="button" class="btn btn-outline-primary">Book List</nuxt-link>
-            </div>
-            <div class="mr-1 ml-1">
-                <nuxt-link to="/add-book" tag="button" class="btn btn-outline-primary">Add Book</nuxt-link>
-            </div>
-             <div class="mr-1 ml-1">
-                <button @click="setRandomBook" class="btn btn-outline-primary">Random Book</button>
-            </div>
-            <div class="mr-1 ml-1" v-if="getIsLogged">
-                <button @click="logOut" class="btn btn-outline-danger">Log Out</button>
-            </div>
-            <div class="mr-1 ml-1" v-if="getIsLogged && isAdmin">
-                <button @click="goToAdminPanel" class="btn btn-outline-danger">Admin Panel</button>
-            </div>
-        </div>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <nuxt-link tag="a" class="nav-link" to="/">Book List</nuxt-link>
+            </li>
+            <li class="nav-item">
+                <nuxt-link tag="a" class="nav-link" to="/add-book">Add Book</nuxt-link>
+            </li>
+            <li class="nav-item cursor-pointer">
+                <a class="nav-link" @click="setRandomBook">Random Book</a>
+            </li>
+            <li class="nav-item cursor-pointer" v-if="getIsLogged">
+                <a class="nav-link" @click="logOut">Log Out</a>
+            </li>
+            <li class="nav-item cursor-pointer" v-if="getIsLogged && isAdmin">
+                <a class="nav-link" @click="goToAdminPanel">Admin Panel</a>
+            </li>
+        </ul>
     </div>
 </template>
 
@@ -54,3 +54,9 @@ export default class Navigation extends Vue {
 
 };
 </script>
+
+<style scoped>
+.cursor-pointer {
+    cursor: pointer;
+}
+</style>
