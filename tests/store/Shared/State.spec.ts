@@ -1,6 +1,7 @@
 import shared from '~/store/shared';
 
 describe('Shared state', () => {
+
     test('State defaults', () => {
         expect(shared.state.books).toEqual([]);
         expect(shared.state.searchedValue).toEqual('');
@@ -16,4 +17,5 @@ describe('Shared state', () => {
         ]);
         expect(shared.state).toBeDefined();
     });
+
 });

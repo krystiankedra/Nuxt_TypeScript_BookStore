@@ -16,7 +16,7 @@ describe('Shared mutations', () => {
         title: 'TestTitleUpdate', description: 'TestDescriptionUpdate',
         inserted: 'TestInsertedUpdate', modified: 'TestModifiedUpdate'
     },
-    payloadArray = [
+    payloadArray: BookInterface[] = [
         {
             id: '24', user: '5',
             category: '1', subcategory: '20',
@@ -44,7 +44,7 @@ describe('Shared mutations', () => {
     });
 
     test('setBook', () => {
-        shared.mutations.setBooks(state, payloadArray.map(item => ({ ...item })));
+        shared.mutations.setBooks(state, payloadArray);
         expect(state.books.length).toBeGreaterThanOrEqual(2);
     });
 
@@ -61,8 +61,8 @@ describe('Shared mutations', () => {
     test('updateBook', () => {
         shared.mutations.updateBook(state, Object.assign({} ,payloadToUpdate));
         const updatedDescription = state.books.find((book: BookInterface) => book.id === payloadToUpdate.id);
-        expect(updatedDescription.description).toBe('TestDescriptionUpdate');
-        expect(updatedDescription.title).toBe('TestTitleUpdate');
+        expect(updatedDescription.description).toBe(payloadToUpdate.description);
+        expect(updatedDescription.title).toBe(payloadToUpdate.title);
     });
 
     test('setSerachedValue', () => {
@@ -79,4 +79,5 @@ describe('Shared mutations', () => {
         shared.mutations.setSelectedBook(state, '29');
         expect(shared.state.selectedBook).toEqual(payload);
     });
+
 });

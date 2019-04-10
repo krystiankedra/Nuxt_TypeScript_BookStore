@@ -1,13 +1,20 @@
 import shared from '~/store/shared';
+import { BookInterface } from '~/types';
 
 describe('Shared getters', () => {
 
-    const payloadArray = [
+    const payloadArray: BookInterface[] = [
         {
             id: '24', user: '5',
             category: '1', subcategory: '20',
             title: 'TestTitle', description: 'TestDescription',
             inserted: 'TestInserted', modified: 'TestModified'
+        },
+        {
+            id: '15', user: '5',
+            category: '1', subcategory: '20',
+            title: 'HarryPotter', description: 'Harry',
+            inserted: 'HarryInserted', modified: 'HarryModified'
         }
     ],
     state = shared.state;
@@ -25,8 +32,10 @@ describe('Shared getters', () => {
     });
 
     test('getBooks', () => {
-        const getBooks = shared.getters.getBooks;
-        expect(getBooks.length).toBe(1);
+        shared.mutations.setBooks(state, payloadArray);
+        shared.mutations.setSerachedValue(state, 'update');
+        expect(shared.getters.getBooks(state, 'getBooks', null, null)).toEqual([]);
+        expect(shared.getters.getBooks(state, 'getBooks', null, null).length).toBe(0);
     });
 
 });
