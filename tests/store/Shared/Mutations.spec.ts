@@ -5,7 +5,7 @@ describe('Shared mutations', () => {
 
     const state = shared.state,
     payload: BookInterface = {
-        id: '24', user: '5',
+        id: '29', user: '5',
         category: '1', subcategory: '20',
         title: 'TestTitle', description: 'TestDescription',
         inserted: 'TestInserted', modified: 'TestModified'
@@ -16,22 +16,53 @@ describe('Shared mutations', () => {
         title: 'TestTitleUpdate', description: 'TestDescriptionUpdate',
         inserted: 'TestInsertedUpdate', modified: 'TestModifiedUpdate'
     },
-    payloadArray = [payload];
+    payloadArray = [
+        {
+            id: '24', user: '5',
+            category: '1', subcategory: '20',
+            title: 'TestTitle', description: 'TestDescription',
+            inserted: 'TestInserted', modified: 'TestModified'
+        },
+        {
+            id: '23', user: '5',
+            category: '1', subcategory: '20',
+            title: 'TestTitleUpdate', description: 'TestDescriptionUpdate',
+            inserted: 'TestInsertedUpdate', modified: 'TestModifiedUpdate'
+        }
+    ];
+
+    beforeEach(() => {
+        shared.mutations.setBooks(state, payloadArray);
+        shared.mutations.setPropertyToSort(state, '');
+        shared.mutations.setSerachedValue(state, '');
+    });
+
+    afterEach(() => {
+        shared.mutations.setBooks(state, payloadArray);
+        shared.mutations.setPropertyToSort(state, '');
+        shared.mutations.setSerachedValue(state, '');
+    });
 
     test('setBook', () => {
-        shared.mutations.setBooks(state, payloadArray);
-        expect(state.books.length).toBeGreaterThanOrEqual(1);
+        shared.mutations.setBooks(state, payloadArray.map(item => ({ ...item })));
+        expect(state.books.length).toBeGreaterThanOrEqual(2);
+    });
+
+    test('deleteBook', () => {
+        shared.mutations.deleteBook(state, '24');
+        expect(state.books.length).toBe(1);
     });
 
     test('addBook', () => {
         shared.mutations.addBook(state, payload);
-        expect(state.books.length).toBe(2);
+        expect(state.books.length).toBe(3);
     });
 
     test('updateBook', () => {
-        shared.mutations.updateBook(state, payloadToUpdate);
-        const updatedDescription = state.books.find((book: BookInterface) => book.id === payloadToUpdate.id).description;
-        expect(updatedDescription).toBe('TestDescriptionUpdate');
+        shared.mutations.updateBook(state, Object.assign({} ,payloadToUpdate));
+        const updatedDescription = state.books.find((book: BookInterface) => book.id === payloadToUpdate.id);
+        expect(updatedDescription.description).toBe('TestDescriptionUpdate');
+        expect(updatedDescription.title).toBe('TestTitleUpdate');
     });
 
     test('setSerachedValue', () => {
@@ -45,13 +76,7 @@ describe('Shared mutations', () => {
     });
 
     test('setSelectedBook', () => {
-        shared.mutations.setSelectedBook(state, '24');
+        shared.mutations.setSelectedBook(state, '29');
         expect(shared.state.selectedBook).toEqual(payload);
     });
-
-    test('deleteBook', () => {
-        shared.mutations.deleteBook(state, '24');
-        expect(state.books.length).toBe(0);
-    });
-
 });
