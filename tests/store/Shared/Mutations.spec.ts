@@ -3,20 +3,20 @@ import { BookInterface } from '~/types';
 
 describe('Shared mutations', () => {
 
-    const state = shared.state;
-    const payload: BookInterface = {
+    const state = shared.state,
+    payload: BookInterface = {
         id: '24', user: '5',
         category: '1', subcategory: '20',
         title: 'TestTitle', description: 'TestDescription',
         inserted: 'TestInserted', modified: 'TestModified'
-    };
-    const payloadToUpdate: BookInterface = {
+    },
+    payloadToUpdate: BookInterface = {
         id: '24', user: '5',
         category: '1', subcategory: '20',
         title: 'TestTitleUpdate', description: 'TestDescriptionUpdate',
         inserted: 'TestInsertedUpdate', modified: 'TestModifiedUpdate'
-    };
-    const payloadArray = [payload];
+    },
+    payloadArray = [payload];
 
     test('setBook', () => {
         shared.mutations.setBooks(state, payloadArray);
