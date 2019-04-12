@@ -1,3 +1,8 @@
+# About Application
+
+> Library/Bookstore application.
+> If You want to log as Admin or as simply User then go to store/registration/state.ts or create self account in registration page.
+
 # nuxttypescriptbooks
 
 > Nuxt.js TypeScript project
