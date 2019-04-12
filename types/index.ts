@@ -48,24 +48,3 @@ export interface LoginStateInterface {
   isLogged: boolean
   loggedUser: RegisterUserInterface
 };
-
-export interface SharedModuleInterface {
-  state: SharedStateInterface
-  getters: GetterTree<SharedStateInterface, SharedStateInterface>
-  mutations: MutationTree<SharedStateInterface>
-  actions: ActionTree<SharedStateInterface, SharedStateInterface>
-};
-
-export interface RegistrationModuleInterface {
-  state: RegistrationStateInterface
-  getters: GetterTree<RegistrationStateInterface, RegistrationStateInterface>
-  mutations: MutationTree<RegistrationStateInterface>
-  actions: ActionTree<RegistrationStateInterface, RegistrationStateInterface>
-};
-
-export interface LoginModuleInterface {
-  state: LoginStateInterface
-  getters: GetterTree<LoginStateInterface, LoginStateInterface>
-  mutations: MutationTree<LoginStateInterface>
-  actions: ActionTree<LoginStateInterface, LoginStateInterface>
-};
