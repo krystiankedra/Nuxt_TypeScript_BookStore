@@ -59,7 +59,7 @@ describe('Shared mutations', () => {
     });
 
     test('updateBook', () => {
-        shared.mutations.updateBook(state, Object.assign({} ,payloadToUpdate));
+        shared.mutations.updateBook(state, Object.assign({}, payloadToUpdate));
         const updatedDescription = state.books.find((book: BookInterface) => book.id === payloadToUpdate.id);
         expect(updatedDescription.description).toBe(payloadToUpdate.description);
         expect(updatedDescription.title).toBe(payloadToUpdate.title);

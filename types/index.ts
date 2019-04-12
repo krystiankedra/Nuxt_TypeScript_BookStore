@@ -1,5 +1,3 @@
-import { GetterTree, ActionTree, MutationTree } from "vuex";
-
 export interface BookInterface {
   id: string
   user: string
