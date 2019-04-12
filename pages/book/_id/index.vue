@@ -26,7 +26,7 @@ export default class extends Vue {
         }
 
         this.$store.commit(MUTATIONS.SET_SELECTED_BOOK, this.$route.params.id);
-    }
+    };
 
 };
 </script>

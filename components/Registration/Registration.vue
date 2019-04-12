@@ -121,8 +121,8 @@ export default class Registration extends Vue {
 
     registerAccount(): void {
         const newUser = this.createNewAccount(),
-        isExistAccount = this.checkIfAccountExist(newUser),
-        shouldCreate = this.validateNewAccount(newUser);
+            isExistAccount = this.checkIfAccountExist(newUser),
+            shouldCreate = this.validateNewAccount(newUser);
 
         if (!isExistAccount && shouldCreate) {
             this.$emit('createNewAccount', newUser);

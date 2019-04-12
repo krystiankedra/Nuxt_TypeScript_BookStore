@@ -1,5 +1,4 @@
 //shared
-
 export const SET_BOOKS: string = "setBooks";
 export const DELETE_BOOK: string = "deleteBook";
 export const SET_SEARCHED_VALUE: string = "setSerachedValue";

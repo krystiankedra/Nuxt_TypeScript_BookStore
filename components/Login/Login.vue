@@ -67,7 +67,7 @@ export default class Login extends Vue {
 
     logToAccount(logValues): void {
         const isExistAccount = this.checkIfAccountExist(logValues),
-        isValidate = this.validationLogin(logValues);
+            isValidate = this.validationLogin(logValues);
 
         if (isExistAccount && isValidate) {
             this.$emit('setLoggedUser', logValues);
