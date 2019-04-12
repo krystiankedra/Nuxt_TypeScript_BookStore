@@ -2,55 +2,55 @@ import registration from '~/store/registration';
 import { RegisterUserInterface, BookInterface } from '~/types';
 
 describe('Registration mutations', () => {
-    const state = registration.state,
-    payload: RegisterUserInterface[] = [
-        {
-            login: "admin",
-            password: "admin",
-            email: "admin@admin.com",
-            age: 35,
-            firstname: "Admin",
-            lastname: "Admin",
-            role: "admin",
-            books: []
-        },
-        {
-            login: "krystian",
-            password: "kkedra",
-            email: "krystianVuejs@test.com",
-            age: 25,
-            firstname: "Krystian",
-            lastname: "Kędra",
-            role: "admin",
-            books: []
-        },
-        {
-            login: "pkowalski",
-            password: "pkowalski123",
-            email: "pkowalski@test.com",
-            age: 28,
-            firstname: "Paweł",
-            lastname: "Kowalski",
-            role: "user",
-            books: []
-        },
-        {
-            login: "jnowak",
-            password: "jnowak123",
-            email: "jnowak@test.com",
-            age: 23,
-            firstname: "Jan",
-            lastname: "Nowak",
-            role: "user",
-            books: []
-        }
-    ],
-    exampleBook: BookInterface = {
-        id: '101', user: '5',
-        category: '1', subcategory: '20',
-        title: 'exampleBookTitle', description: 'exampleBookDescription',
-        inserted: 'exampleBookInserted', modified: 'exampleBookModified'
-    };
+    const { state } = registration,
+        payload: RegisterUserInterface[] = [
+            {
+                login: "admin",
+                password: "admin",
+                email: "admin@admin.com",
+                age: 35,
+                firstname: "Admin",
+                lastname: "Admin",
+                role: "admin",
+                books: []
+            },
+            {
+                login: "krystian",
+                password: "kkedra",
+                email: "krystianVuejs@test.com",
+                age: 25,
+                firstname: "Krystian",
+                lastname: "Kędra",
+                role: "admin",
+                books: []
+            },
+            {
+                login: "pkowalski",
+                password: "pkowalski123",
+                email: "pkowalski@test.com",
+                age: 28,
+                firstname: "Paweł",
+                lastname: "Kowalski",
+                role: "user",
+                books: []
+            },
+            {
+                login: "jnowak",
+                password: "jnowak123",
+                email: "jnowak@test.com",
+                age: 23,
+                firstname: "Jan",
+                lastname: "Nowak",
+                role: "user",
+                books: []
+            }
+        ],
+        exampleBook: BookInterface = {
+            id: '101', user: '5',
+            category: '1', subcategory: '20',
+            title: 'exampleBookTitle', description: 'exampleBookDescription',
+            inserted: 'exampleBookInserted', modified: 'exampleBookModified'
+        };
 
     beforeEach(() => {
         state.registraitedUsers = payload.map(item => ({...item}));
@@ -75,7 +75,8 @@ describe('Registration mutations', () => {
             lastname: "Jab",
             role: "admin",
             books: []
-        }
+        };
+
         expect(state.registraitedUsers.length).toBe(4);
         registration.mutations.createNewAccount(state, newAccount);
         expect(state.registraitedUsers.length).toBe(5);
@@ -92,15 +93,15 @@ describe('Registration mutations', () => {
             role: "admin",
             books: []
         },
-        exampleAccountToEdit = {
-            login: "MichalJ",
-            password: "Kamil123",
-            email: "Kamil@test.com",
-            age: 25,
-            firstname: "Kamil",
-            lastname: "KamilLastName",
-            role: "admin",
-        };
+            exampleAccountToEdit = {
+                login: "MichalJ",
+                password: "Kamil123",
+                email: "Kamil@test.com",
+                age: 25,
+                firstname: "Kamil",
+                lastname: "KamilLastName",
+                role: "admin",
+            };
 
         expect(state.registraitedUsers.length).toBe(4);
         registration.mutations.createNewAccount(state, exampleAccountToAdd);
@@ -164,7 +165,7 @@ describe('Registration mutations', () => {
             role: "user",
             books: []
         },
-        index: number = 0;
+            index: number = 0;
 
         expect(state.registraitedUsers.length).toBe(4);
 

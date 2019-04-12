@@ -3,24 +3,24 @@ import { RegisterUserInterface } from '~/types';
 
 describe('Login mutations', () => {
 
-    const state = login.state,
-    payload: RegisterUserInterface = {
-        login: 'Krystian',
-        password: 'KrystianTest123',
-        email: 'krystian@test.com',
-        age: 25,
-        firstname: 'Krystian',
-        lastname: 'kedra',
-        role: 'admin',
-        books: [
-            {
-                id: '55', user: '5',
-                category: '1', subcategory: '20',
-                title: 'ExampleBookTitle', description: 'ExampleBookDescription',
-                inserted: 'ExampleBookInserted', modified: 'ExampleBookModified'
-            }
-        ]
-    };
+    const { state } = login,
+        payload: RegisterUserInterface = {
+            login: 'Krystian',
+            password: 'KrystianTest123',
+            email: 'krystian@test.com',
+            age: 25,
+            firstname: 'Krystian',
+            lastname: 'kedra',
+            role: 'admin',
+            books: [
+                {
+                    id: '55', user: '5',
+                    category: '1', subcategory: '20',
+                    title: 'ExampleBookTitle', description: 'ExampleBookDescription',
+                    inserted: 'ExampleBookInserted', modified: 'ExampleBookModified'
+                }
+            ]
+        };
 
     beforeEach(() => {
         login.mutations.setLoggedUser(state, {});

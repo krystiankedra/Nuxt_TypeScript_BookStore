@@ -17,7 +17,7 @@ describe('Shared getters', () => {
             inserted: 'HarryInserted', modified: 'HarryModified'
         }
     ],
-    state = shared.state;
+        state = shared.state;
 
     beforeEach(() => {
         shared.mutations.setBooks(state, payloadArray);

@@ -4,32 +4,32 @@ import { BookInterface } from '~/types';
 describe('Shared mutations', () => {
 
     const state = shared.state,
-    payload: BookInterface = {
-        id: '29', user: '5',
-        category: '1', subcategory: '20',
-        title: 'TestTitle', description: 'TestDescription',
-        inserted: 'TestInserted', modified: 'TestModified'
-    },
-    payloadToUpdate: BookInterface = {
-        id: '24', user: '5',
-        category: '1', subcategory: '20',
-        title: 'TestTitleUpdate', description: 'TestDescriptionUpdate',
-        inserted: 'TestInsertedUpdate', modified: 'TestModifiedUpdate'
-    },
-    payloadArray: BookInterface[] = [
-        {
-            id: '24', user: '5',
+        payload: BookInterface = {
+            id: '29', user: '5',
             category: '1', subcategory: '20',
             title: 'TestTitle', description: 'TestDescription',
             inserted: 'TestInserted', modified: 'TestModified'
         },
-        {
-            id: '23', user: '5',
+        payloadToUpdate: BookInterface = {
+            id: '24', user: '5',
             category: '1', subcategory: '20',
             title: 'TestTitleUpdate', description: 'TestDescriptionUpdate',
             inserted: 'TestInsertedUpdate', modified: 'TestModifiedUpdate'
-        }
-    ];
+        },
+        payloadArray: BookInterface[] = [
+            {
+                id: '24', user: '5',
+                category: '1', subcategory: '20',
+                title: 'TestTitle', description: 'TestDescription',
+                inserted: 'TestInserted', modified: 'TestModified'
+            },
+            {
+                id: '23', user: '5',
+                category: '1', subcategory: '20',
+                title: 'TestTitleUpdate', description: 'TestDescriptionUpdate',
+                inserted: 'TestInsertedUpdate', modified: 'TestModifiedUpdate'
+            }
+        ];
 
     beforeEach(() => {
         shared.mutations.setBooks(state, payloadArray);
