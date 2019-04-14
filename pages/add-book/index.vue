@@ -3,10 +3,10 @@
         <h2 class="mt-2">Add new book</h2>
         <div class="row">
             <div class="form-group col-6">
-                <new-value-emiter :new-value.sync="title" :item-header="titleHeader" class="mb-2 mt-2" />
+                <new-value-emiter :new-value.sync="title" :item-header="titleHeader" valueType="text" class="mb-2 mt-2" />
             </div>
             <div class="form-group col-6">
-                <new-value-emiter :new-value.sync="description" :item-header="descriptionHeader" class="mb-2 mt-2" />
+                <new-value-emiter :new-value.sync="description" :item-header="descriptionHeader" valueType="text" class="mb-2 mt-2" />
             </div>
         </div>
         <div class="mb-3">

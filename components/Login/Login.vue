@@ -3,10 +3,10 @@
         <h2 class="mt-2">Log to Your account</h2>
         <div class="row">
             <div class="form-group col-6">
-                <new-value-emiter :new-value.sync="login" :item-header="loginHeader" class="mb-5 mt-5" />
+                <new-value-emiter :new-value.sync="login" :item-header="loginHeader" valueType="text" class="mb-5 mt-5" />
             </div>
             <div class="form-group col-6">
-                <new-value-emiter :new-value.sync="password" :item-header="passwordHeader" class="mb-5 mt-5" />
+                <new-value-emiter :new-value.sync="password" :item-header="passwordHeader" valueType="password" class="mb-5 mt-5" />
             </div>
         </div>
         <validation-information v-if="!isCorrectValidate" :text="validationText" />

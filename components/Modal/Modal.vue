@@ -7,8 +7,8 @@
           <button @click="closeModal" type="button" class="close">&times;</button>
         </div>
         <div class="modal-body">
-          <new-value-emiter :new-value.sync="propWithoutReference.title" :item-header="titleHeader" class="mb-5 mt-5" />
-          <new-value-emiter :new-value.sync="propWithoutReference.description" :item-header="descriptionHeader" class="mb-5 mt-5" />
+          <new-value-emiter :new-value.sync="propWithoutReference.title" :item-header="titleHeader" valueType="text" class="mb-5 mt-5" />
+          <new-value-emiter :new-value.sync="propWithoutReference.description" :item-header="descriptionHeader" valueType="text" class="mb-5 mt-5" />
         </div>
         <div class="modal-footer">
           <button @click="closeModal" type="button" class="btn btn-outline-danger">Close</button>

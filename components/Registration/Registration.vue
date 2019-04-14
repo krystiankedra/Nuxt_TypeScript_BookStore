@@ -3,31 +3,31 @@
         <h2 class="mt-2">Add new account</h2>
         <div class="row">
             <div class="form-group col-6">
-                <new-value-emiter :new-value.sync="login" :item-header="loginHeader" class="mb-3 mt-3" />
+                <new-value-emiter :new-value.sync="login" :item-header="loginHeader" valueType="text" class="mb-3 mt-3" />
             </div>
             <div class="form-group col-6">
-                <new-value-emiter :new-value.sync="password" :item-header="passwordHeader" class="mb-3 mt-3" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="form-group col-6">
-                <new-value-emiter :new-value.sync="email" :item-header="emailHeader" class="mb-3 mt-3" />
-            </div>
-            <div class="form-group col-6">
-                <new-value-emiter :new-value.sync="age" :item-header="ageHeader" class="mb-3 mt-3" />
+                <new-value-emiter :new-value.sync="password" :item-header="passwordHeader" valueType="password" class="mb-3 mt-3" />
             </div>
         </div>
         <div class="row">
             <div class="form-group col-6">
-                <new-value-emiter :new-value.sync="firstname" :item-header="firstnameHeader" class="mb-3 mt-3" />
+                <new-value-emiter :new-value.sync="email" :item-header="emailHeader" valueType="text" class="mb-3 mt-3" />
             </div>
             <div class="form-group col-6">
-                <new-value-emiter :new-value.sync="lastname" :item-header="lastnameHeader" class="mb-3 mt-3" />
+                <new-value-emiter :new-value.sync="age" :item-header="ageHeader" valueType="text" class="mb-3 mt-3" />
             </div>
         </div>
         <div class="row">
             <div class="form-group col-6">
-                <new-value-emiter :new-value.sync="secretKey" :item-header="secrectKeyHeader" class="mb-3 mt-3" />
+                <new-value-emiter :new-value.sync="firstname" :item-header="firstnameHeader" valueType="text" class="mb-3 mt-3" />
+            </div>
+            <div class="form-group col-6">
+                <new-value-emiter :new-value.sync="lastname" :item-header="lastnameHeader" valueType="text" class="mb-3 mt-3" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-6">
+                <new-value-emiter :new-value.sync="secretKey" :item-header="secrectKeyHeader" valueType="text" class="mb-3 mt-3" />
             </div>
         </div>
         <validation-information v-if="!isCorrectValidate" :text="validationText" />

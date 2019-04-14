@@ -3,23 +3,23 @@
         <h2 class="mt-3">Edit Your Profile</h2>
         <div class="row">
             <div class="form-group col-6">
-                <new-value-emiter :new-value.sync="userData.password" :item-header="passwordHeader" class="mb-2 mt-2" />
+                <new-value-emiter :new-value.sync="userData.password" :item-header="passwordHeader" valueType="password" class="mb-2 mt-2" />
             </div>
         </div>
         <div class="row">
             <div class="form-group col-6">
-                <new-value-emiter :new-value.sync="userData.email" :item-header="emailHeader" class="mb-2 mt-2" />
+                <new-value-emiter :new-value.sync="userData.email" :item-header="emailHeader" valueType="text" class="mb-2 mt-2" />
             </div>
             <div class="form-group col-6">
-                <new-value-emiter :new-value.sync="userData.age" :item-header="ageHeader" class="mb-2 mt-2" />
+                <new-value-emiter :new-value.sync="userData.age" :item-header="ageHeader" valueType="text" class="mb-2 mt-2" />
             </div>
         </div>
         <div class="row">
             <div class="form-group col-6">
-                <new-value-emiter :new-value.sync="userData.firstname" :item-header="firstnameHeader" class="mb-2 mt-2" />
+                <new-value-emiter :new-value.sync="userData.firstname" :item-header="firstnameHeader" valueType="text" class="mb-2 mt-2" />
             </div>
             <div class="form-group col-6">
-                <new-value-emiter :new-value.sync="userData.lastname" :item-header="lastnameHeader" class="mb-2 mt-2" />
+                <new-value-emiter :new-value.sync="userData.lastname" :item-header="lastnameHeader" valueType="text" class="mb-2 mt-2" />
             </div>
         </div>
         <div class="mb-5">

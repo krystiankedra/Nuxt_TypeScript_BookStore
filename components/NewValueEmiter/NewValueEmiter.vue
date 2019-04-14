@@ -2,7 +2,7 @@
     <div>
         New {{ itemHeader }}:
         <input v-model="updatedValue"
-            type="text"
+            :type="valueType"
             class="form-control card-shadow"
             :placeholder="`Type ${itemHeader}`">
     </div>
@@ -16,6 +16,7 @@ export default class NewValueEmiter extends Vue {
 
     @Prop() newValue: string;
     @Prop() itemHeader: string;
+    @Prop() valueType: string;
 
     get updatedValue(): string {
         return this.newValue;
