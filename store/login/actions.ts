@@ -1,6 +1,6 @@
 import { ActionTree } from "vuex";
-import { LoginStateInterface } from "~/types";
+import { LoginStateInterface, SharedStateInterface } from "~/types";
 
-export default<ActionTree<LoginStateInterface, any>> {
+export default<ActionTree<LoginStateInterface, SharedStateInterface>> {
 
 };

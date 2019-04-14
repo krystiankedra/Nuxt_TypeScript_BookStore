@@ -1,6 +1,6 @@
 import { ActionTree } from "vuex";
-import { RegistrationStateInterface } from "~/types";
+import { RegistrationStateInterface, SharedStateInterface } from "~/types";
 
-export default<ActionTree<RegistrationStateInterface, any>> {
+export default<ActionTree<RegistrationStateInterface, SharedStateInterface>> {
 
 };
